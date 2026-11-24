@@ -3,10 +3,13 @@
 ## Ajouter des projets au fur et à mesure
 1. Mettre les images dans `public/images/` (JPG ou PNG, 1600 px de large conseillé).
 2. Ouvrir `src/data.js`, trouver la liste `PROJETS` et ajouter `img: "/images/nom-du-fichier.jpg"` au projet concerné.
-3. Pour un nouveau projet, copier un bloc existant et modifier : `cat`, `t` (titre FR/EN), `d` (résumé), `long` (description), `client`, `year`, `tools`, `deliv` (livrables).
+3. Pour un nouveau projet, copier un bloc existant et modifier : `cat`, `t` (titre FR/EN), `d` (résumé), `long` (description), `client` et `tools` (FR/EN), `year`, `deliv` (livrables), `motif` (illustration provisoire).
 4. Les catégories disponibles sont dans `T.fr` et `T.en` (`magazines`, `marques`, `publicite`, `reseaux`, `photovideo`, `interieur`).
 
 Les 6 projets actuels sont déduits du CV : à remplacer par les vraies réalisations.
+
+## Pages du site
+Accueil `/`, Réalisations `/realisations`, page projet `/realisations/1`, Services `/services`, À propos `/a-propos`, Contact `/contact`. Les illustrations et icônes sont des visuels provisoires dessinés en code (`src/Art.jsx`, `src/Icons.jsx`) : elles disparaissent d'un projet dès qu'on lui donne une vraie image avec `img`.
 
 ## Autres réglages
 - Contacts (WhatsApp, e-mail, Facebook, Google Drive) : objet `CONTACT` à la fin de `src/data.js`. Le lien Google Drive est à tester.

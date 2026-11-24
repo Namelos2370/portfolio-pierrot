@@ -1,65 +1,59 @@
-import { useEffect, useState } from 'react'
-import { NOM, PROJETS, T } from './data.js'
-import Header from './Header.jsx'
-import Home from './Home.jsx'
-import Detail from './Detail.jsx'
+import { useEffect } from 'react'
+import { BrowserRouter, Routes, Route, Outlet, useLocation } from 'react-router-dom'
+import { LangProvider, useLang } from './context.jsx'
+import { NOM, PROJETS } from './data.js'
+import Header from './components/Header.jsx'
+import Footer from './components/Footer.jsx'
+import Home from './pages/Home.jsx'
+import Work from './pages/Work.jsx'
+import Project from './pages/Project.jsx'
+import Services from './pages/Services.jsx'
+import About from './pages/About.jsx'
+import Contact from './pages/Contact.jsx'
+import NotFound from './pages/NotFound.jsx'
 
-function initialLang() {
-  try {
-    const saved = localStorage.getItem('lang')
-    if (saved === 'fr' || saved === 'en') return saved
-  } catch (e) {}
-  return (navigator.language || '').slice(0, 2) === 'en' ? 'en' : 'fr'
-}
+function Layout() {
+  const { pathname } = useLocation()
+  const { lang, t } = useLang()
 
-/* Routage par hash : #projet-3 ouvre la page du projet 3, tout autre hash revient à l'accueil. */
-function readRoute() {
-  const m = window.location.hash.match(/^#projet-(\d+)$/)
-  return m && PROJETS[+m[1] - 1] ? +m[1] : 0
-}
-
-export default function App() {
-  const [lang, setLangState] = useState(initialLang)
-  const [project, setProject] = useState(readRoute)
-  const t = T[lang]
-
-  const setLang = (l) => {
-    setLangState(l)
-    try { localStorage.setItem('lang', l) } catch (e) {}
-  }
+  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
 
   useEffect(() => {
-    const onHash = () => setProject(readRoute())
-    window.addEventListener('hashchange', onHash)
-    return () => window.removeEventListener('hashchange', onHash)
-  }, [])
-
-  useEffect(() => {
-    document.documentElement.lang = lang
+    const pm = pathname.match(/^\/realisations\/(\d+)$/)
+    const proj = pm ? PROJETS[+pm[1] - 1] : null
+    const names = { '/realisations': t.nav_work, '/services': t.nav_services, '/a-propos': t.nav_about, '/contact': t.nav_contact }
+    const page = proj ? proj.t[lang] : names[pathname.replace(/\/$/, '')]
+    document.title = page ? `${page} · ${NOM}` : `${t.title} · ${NOM}`
     const md = document.querySelector('meta[name="description"]')
-    if (md) md.setAttribute('content', t.desc)
-  }, [lang, t])
-
-  useEffect(() => {
-    document.title = project ? `${PROJETS[project - 1].t[lang]} · ${NOM}` : `${t.title} · ${NOM}`
-  }, [project, lang, t])
-
-  /* Défilement : en haut pour une page projet, vers la section pour un lien d'ancre. */
-  useEffect(() => {
-    if (project) { window.scrollTo(0, 0); return }
-    const id = window.location.hash.slice(1)
-    const el = id && id !== 'haut' ? document.getElementById(id) : null
-    if (el) el.scrollIntoView()
-    else window.scrollTo(0, 0)
-  }, [project])
+    if (md) md.setAttribute('content', proj ? proj.d[lang] : t.desc)
+  }, [pathname, lang, t])
 
   return (
     <>
-      <Header lang={lang} setLang={setLang} t={t} nom={NOM} />
-      {project ? <Detail n={project} lang={lang} t={t} /> : <Home lang={lang} t={t} />}
-      <footer>
-        <div className="wrap">© {new Date().getFullYear()} {NOM} · {t.foot}</div>
-      </footer>
+      <a className="skip" href="#main">Contenu</a>
+      <Header />
+      <main id="main" key={pathname} className="page"><Outlet /></main>
+      <Footer />
     </>
+  )
+}
+
+export default function App() {
+  return (
+    <LangProvider>
+      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/realisations" element={<Work />} />
+            <Route path="/realisations/:id" element={<Project />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/a-propos" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </LangProvider>
   )
 }
