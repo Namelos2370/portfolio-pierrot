@@ -1,5 +1,5 @@
 /* Illustrations vectorielles liées aux métiers du client. À remplacer par ses vraies images (champ `img` dans data.js). */
-const INK = '#0E1A2B'
+const INK = '#14181F'
 
 function Scene({ motif, c }) {
   switch (motif) {
@@ -23,7 +23,7 @@ function Scene({ motif, c }) {
     case 'brand':
       return (
         <g>
-          <g stroke="#C6D0E0" strokeWidth="1">
+          <g stroke="#D8CDB8" strokeWidth="1">
             {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => <line key={'v' + i} x1={50 + i * 45} y1="30" x2={50 + i * 45} y2="240" />)}
             {[0, 1, 2, 3, 4].map((i) => <line key={'h' + i} x1="40" y1={50 + i * 45} x2="360" y2={50 + i * 45} />)}
           </g>
@@ -122,7 +122,7 @@ function Scene({ motif, c }) {
 export default function Art({ motif, c, label }) {
   return (
     <svg viewBox="0 0 400 300" role="img" aria-label={label} xmlns="http://www.w3.org/2000/svg" className="art">
-      <rect width="400" height="300" fill="#E8EDF5" />
+      <rect width="400" height="300" fill="#EDE6D8" />
       <Scene motif={motif} c={c} />
     </svg>
   )
@@ -138,18 +138,18 @@ export function Visual({ projet, lang }) {
 export function HeroArt() {
   return (
     <svg viewBox="0 0 420 420" className="hero-art" role="img" aria-label="Illustration : outils de graphiste, appareil photo et pellicule" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="210" cy="210" r="170" fill="#E8EDF5" />
-      <circle cx="210" cy="210" r="118" fill="none" stroke="#C6D0E0" strokeDasharray="5 7" />
+      <circle cx="210" cy="210" r="170" fill="#EDE6D8" />
+      <circle cx="210" cy="210" r="118" fill="none" stroke="#D8CDB8" strokeDasharray="5 7" />
       <g className="a-float">
-        <rect x="120" y="110" width="150" height="190" rx="10" fill="#FFC736" stroke={INK} strokeWidth="3" />
-        <rect x="136" y="128" width="90" height="16" rx="3" fill="#2848F0" />
-        <circle cx="200" cy="205" r="38" fill="#FF5B4A" />
+        <rect x="120" y="110" width="150" height="190" rx="10" fill="#C9A96A" stroke={INK} strokeWidth="3" />
+        <rect x="136" y="128" width="90" height="16" rx="3" fill="#8A6A33" />
+        <circle cx="200" cy="205" r="38" fill="#7B2D3B" />
         <path d="M168 232 L200 178 L232 232 Z" fill={INK} opacity=".9" />
         <rect x="136" y="262" width="108" height="8" rx="3" fill="#fff" />
         <rect x="136" y="278" width="76" height="6" rx="3" fill="#fff" opacity=".7" />
       </g>
       <g className="a-float d1">
-        <path d="M290 70 l22 54 -22 22 -22 -22z" fill="#2848F0" stroke={INK} strokeWidth="3" strokeLinejoin="round" />
+        <path d="M290 70 l22 54 -22 22 -22 -22z" fill="#8A6A33" stroke={INK} strokeWidth="3" strokeLinejoin="round" />
         <circle cx="290" cy="116" r="5" fill="#fff" />
         <path d="M290 146 v36" stroke={INK} strokeWidth="3" strokeLinecap="round" />
       </g>
@@ -157,18 +157,18 @@ export function HeroArt() {
         <rect x="262" y="236" width="108" height="76" rx="12" fill={INK} />
         <path d="M284 236 l10 -16 h42 l10 16" fill={INK} />
         <circle cx="316" cy="274" r="24" fill="#fff" />
-        <circle cx="316" cy="274" r="14" fill="#2848F0" />
-        <circle cx="316" cy="274" r="5" fill="#FFC736" />
+        <circle cx="316" cy="274" r="14" fill="#8A6A33" />
+        <circle cx="316" cy="274" r="5" fill="#C9A96A" />
       </g>
       <g className="a-float d3">
         <rect x="46" y="250" width="110" height="58" rx="6" fill={INK} />
         {[0, 1, 2, 3, 4].map((i) => <rect key={i} x={54 + i * 21} y="255" width="10" height="7" rx="2" fill="#fff" opacity=".6" />)}
         {[0, 1, 2, 3, 4].map((i) => <rect key={'b' + i} x={54 + i * 21} y="297" width="10" height="7" rx="2" fill="#fff" opacity=".6" />)}
-        <rect x="58" y="268" width="40" height="24" rx="3" fill="#FF5B4A" />
-        <rect x="104" y="268" width="40" height="24" rx="3" fill="#FFC736" />
+        <rect x="58" y="268" width="40" height="24" rx="3" fill="#7B2D3B" />
+        <rect x="104" y="268" width="40" height="24" rx="3" fill="#C9A96A" />
       </g>
       <g className="a-float d1">
-        {['#2848F0', '#FF5B4A', '#FFC736'].map((col, i) => <circle key={col} cx={64 + i * 30} cy="120" r="13" fill={col} stroke={INK} strokeWidth="2" />)}
+        {['#8A6A33', '#7B2D3B', '#C9A96A'].map((col, i) => <circle key={col} cx={64 + i * 30} cy="120" r="13" fill={col} stroke={INK} strokeWidth="2" />)}
       </g>
     </svg>
   )

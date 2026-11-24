@@ -37,3 +37,8 @@ Ajouter le site dans Google Search Console et envoyer `sitemap.xml`.
 - Image de partage : `public/og.png` (1200x630). Les balises `og:image` et `twitter:image` de `index.html` pointent vers `https://VOTRE-DOMAINE.com/og.png` : remplacer par le vrai domaine (WhatsApp exige une adresse complète). Pour changer l'image, remplacer le fichier en gardant le même nom.
 - FAQ : questions et réponses FR/EN dans `FAQ` (`src/data.js`), affichées sur la page Services.
 - Bouton WhatsApp flottant : visible sur toutes les pages sauf Contact (`src/components/WhatsAppFab.jsx`).
+
+## Police, couleurs, justification
+- Police : Montserrat (chargée dans `index.html`, appliquée via `--font-display` et `--font-body` dans `src/styles.css`).
+- Palette luxe discrète : ivoire `#F6F2EA`, charbon `#14181F`, or champagne `#C9A96A`, bronze `#8A6A33`, bordeaux `#7B2D3B`. Les variables sont en haut de `src/styles.css` ; les couleurs des illustrations sont dans `src/Art.jsx` et `src/data.js`.
+- Texte justifié avec césure automatique (fin de `src/styles.css`). Pour revenir à un alignement à gauche, supprimer le bloc « Texte justifié ».
