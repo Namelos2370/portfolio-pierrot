@@ -32,3 +32,8 @@ Vercel > Project > Settings > Domains > ajouter le domaine, puis copier les DNS 
 
 ## Google
 Ajouter le site dans Google Search Console et envoyer `sitemap.xml`.
+
+## Image de partage, FAQ, bouton WhatsApp
+- Image de partage : `public/og.png` (1200x630). Les balises `og:image` et `twitter:image` de `index.html` pointent vers `https://VOTRE-DOMAINE.com/og.png` : remplacer par le vrai domaine (WhatsApp exige une adresse complète). Pour changer l'image, remplacer le fichier en gardant le même nom.
+- FAQ : questions et réponses FR/EN dans `FAQ` (`src/data.js`), affichées sur la page Services.
+- Bouton WhatsApp flottant : visible sur toutes les pages sauf Contact (`src/components/WhatsAppFab.jsx`).

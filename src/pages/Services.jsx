@@ -2,6 +2,7 @@ import { useLang } from '../context.jsx'
 import { Reveal } from '../hooks.jsx'
 import Icon from '../Icons.jsx'
 import PageHead from '../components/PageHead.jsx'
+import Faq from '../components/Faq.jsx'
 import CtaBand from '../components/CtaBand.jsx'
 
 const ICONS = ['magazine', 'brand', 'gadgets', 'camera']
@@ -27,6 +28,7 @@ export default function Services() {
           <Reveal as="li" key={n} delay={n * 70}><h3>{t['p' + n + 't']}</h3><p>{t['p' + n + 'd']}</p></Reveal>
         ))}
       </ol>
+      <Faq />
       <CtaBand />
     </div>
   )

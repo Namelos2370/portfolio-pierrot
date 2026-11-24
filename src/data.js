@@ -64,7 +64,7 @@ export const T = {
   about_lead:"Plus de 8 ans en agence de communication, de la maquette à l'imprimerie.",
   contact_lead:"Décrivez votre besoin, je vous réponds rapidement avec un devis.",
   form_name:"Votre nom",form_msg:"Votre message",form_send:"Envoyer sur WhatsApp",form_note:"Le message s'ouvre dans WhatsApp, prêt à envoyer.",
-  cta_title:"Un projet en tête ?",cta_p:"Parlons-en : devis rapide et sans engagement.",
+  faq_eb:"Questions fréquentes",faq_h:"Vos questions, mes réponses",wa_float:"Écrire sur WhatsApp",cta_title:"Un projet en tête ?",cta_p:"Parlons-en : devis rapide et sans engagement.",
   nf_title:"Page introuvable",nf_p:"Cette page n'existe pas ou a été déplacée.",nf_back:"Retour à l'accueil",skills_h:"Compétences",
   nav_work:"Réalisations",nav_services:"Services",nav_about:"À propos",nav_path:"Parcours",nav_contact:"Contact",cta_quote:"Demander un devis",cta_work:"Voir mes réalisations",tag:"Infographe · Photographe · Vidéaste",
   h1:"Des visuels qui font <em>parler</em> votre marque.",lead:"Magazines, marques, gadgets publicitaires, photo et vidéo. Plus de 8 ans en agence de communication, à Yaoundé et partout au Cameroun.",
@@ -88,7 +88,7 @@ export const T = {
   about_lead:"Over 8 years in communication agencies, from mock-up to print shop.",
   contact_lead:"Describe your need and I will reply quickly with a quote.",
   form_name:"Your name",form_msg:"Your message",form_send:"Send on WhatsApp",form_note:"The message opens in WhatsApp, ready to send.",
-  cta_title:"Got a project in mind?",cta_p:"Let's talk: quick quote, no commitment.",
+  faq_eb:"FAQ",faq_h:"Your questions, my answers",wa_float:"Chat on WhatsApp",cta_title:"Got a project in mind?",cta_p:"Let's talk: quick quote, no commitment.",
   nf_title:"Page not found",nf_p:"This page does not exist or has moved.",nf_back:"Back to home",skills_h:"Skills",
   nav_work:"Work",nav_services:"Services",nav_about:"About",nav_path:"Experience",nav_contact:"Contact",cta_quote:"Request a quote",cta_work:"See my work",tag:"Graphic designer · Photographer · Videographer",
   h1:"Visuals that make your brand <em>speak</em>.",lead:"Magazines, brands, promotional items, photo and video. Over 8 years in communication agencies, in Yaoundé and across Cameroon.",
@@ -114,3 +114,22 @@ export const CONTACT = {
   facebook: "https://fb.me/kndigitalagency02/", facebookLabel: "KN Digital Agency",
   drive: "https://drive.google.com/drive/folders/1CODM7HfTrr4Oty-VPvnVWuBqqzqRgvmKe?usp=drive_link"
 };
+
+export const FAQ = {
+  fr:[
+    ["Quels sont les délais de livraison ?","Cela dépend du projet : un logo ou un visuel simple prend quelques jours, un magazine ou une vidéo plus longue demande davantage. Un délai précis est annoncé dès le devis."],
+    ["Combien de révisions sont incluses ?","Des retouches sont prévues jusqu'à validation du résultat. Le nombre exact est précisé dans le devis."],
+    ["Comment se passe le paiement ?","Une avance au lancement, puis le solde à la livraison. Paiement en espèces ou par mobile money (Orange Money, MTN MoMo)."],
+    ["Quels fichiers vais-je recevoir ?","Les fichiers prêts à l'emploi (PDF, PNG, JPG, vidéo) et, selon le besoin, les fichiers prêts pour l'impression ou les sources."],
+    ["Travaillez-vous hors de Yaoundé ?","Oui. Tout se fait à distance : échanges par WhatsApp, livraison par lien ou par e-mail. Les prises de vue se déplacent sur demande."],
+    ["Comment demander un devis ?","Écrivez sur WhatsApp en décrivant votre projet. Une réponse rapide avec un devis gratuit et sans engagement."]
+  ],
+  en:[
+    ["What are the delivery times?","It depends on the project: a logo or simple visual takes a few days, a magazine or longer video takes more. An exact deadline comes with the quote."],
+    ["How many revisions are included?","Revisions are included until you approve the result. The exact number is stated in the quote."],
+    ["How does payment work?","A deposit at the start, then the balance on delivery. Payment in cash or by mobile money (Orange Money, MTN MoMo)."],
+    ["Which files will I receive?","Ready-to-use files (PDF, PNG, JPG, video) and, if needed, print-ready files or source files."],
+    ["Do you work outside Yaoundé?","Yes. Everything is done remotely: chat on WhatsApp, delivery by link or e-mail. Shoots can travel on request."],
+    ["How do I request a quote?","Message on WhatsApp describing your project. You get a quick reply with a free, no-commitment quote."]
+  ]
+}

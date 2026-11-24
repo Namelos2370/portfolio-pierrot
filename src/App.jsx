@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Outlet, useLocation } from 'react-router-
 import { LangProvider, useLang } from './context.jsx'
 import { NOM, PROJETS } from './data.js'
 import Header from './components/Header.jsx'
+import WhatsAppFab from './components/WhatsAppFab.jsx'
 import Footer from './components/Footer.jsx'
 import Home from './pages/Home.jsx'
 import Work from './pages/Work.jsx'
@@ -34,6 +35,7 @@ function Layout() {
       <Header />
       <main id="main" key={pathname} className="page"><Outlet /></main>
       <Footer />
+      {pathname !== '/contact' && <WhatsAppFab />}
     </>
   )
 }
